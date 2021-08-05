@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const CardPreview = ({ id, title, text }) => (
   <Card
     className="mx-2 my-3 shadow cardPreview"
-    style={{ width: "18rem", height: "10rem", cursor: "pointer" }}
+    style={{ width: "18rem", cursor: "pointer" }}
   >
-    <Link to={`project/${id}`}>
+    <Link to={`project/${id}`} style={{ width: "100%" }}>
       <Card.Body>
         <Card.Title className="text-center mb-3 ">
           {title.toUpperCase()}
