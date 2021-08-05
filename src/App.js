@@ -1,7 +1,9 @@
 import React from "react";
+
 import HomePage from "./pages/home.page";
 import ProjectPage from "./pages/project.page";
 import NotFoundPage from "./pages/404";
+import Header from "./components/Header.component";
 
 import {
   BrowserRouter as Router,
@@ -13,9 +15,10 @@ import {
 function App() {
   return (
     <Router>
+      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/project" component={ProjectPage} />
+        <Route path="/project/:id" component={ProjectPage} />
         <Route path="/notfound" component={NotFoundPage} />
         <Redirect to="/notfound" />
       </Switch>
