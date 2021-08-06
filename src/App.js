@@ -1,6 +1,6 @@
 import React from "react";
 
-import HomePage from "./pages/home.page";
+import HomePage from "./pages/homePage/home.page";
 import ProjectPage from "./pages/project.page";
 import NewPage from "./pages/newPage/new.page";
 

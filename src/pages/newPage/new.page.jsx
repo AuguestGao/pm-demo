@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import FormInput from "../../components/FormInput/FormInput.component";
 
 import {
-  PageContainer,
+  NewRootContainer,
   FormContainer,
   CustomFieldContainer,
   SelectContainer,
@@ -111,7 +111,7 @@ const NewPage = () => {
   );
 
   return (
-    <PageContainer>
+    <NewRootContainer>
       <FormContainer>
         <h2>NEW</h2>
         <FormInput
@@ -196,7 +196,7 @@ const NewPage = () => {
           Cancel
         </Button>
       </ButtonGroup>
-    </PageContainer>
+    </NewRootContainer>
   );
 };
 
