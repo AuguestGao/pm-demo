@@ -12,7 +12,6 @@ const CardPreview = ({ id, title, text }) => (
         <Card.Title className="text-center mb-3 ">
           {title.toUpperCase()}
         </Card.Title>
-        <hr />
         <Card.Text>{text}</Card.Text>
       </Card.Body>
     </Link>
