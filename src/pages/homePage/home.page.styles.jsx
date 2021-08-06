@@ -17,5 +17,4 @@ export const CardPreviewContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  /* gap: 1px; */
 `;
