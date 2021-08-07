@@ -29,6 +29,12 @@ const HomePage = () => {
             />
           ))
         )}
+        <CardPreview
+          key="fake"
+          id="fake"
+          title="Non-existing Card"
+          text="to mimic manually typed card id"
+        />
       </CardPreviewContainer>
     </HomeRootContainer>
   );

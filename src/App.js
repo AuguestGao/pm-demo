@@ -1,7 +1,7 @@
 import React from "react";
 
 import HomePage from "./pages/homePage/home.page";
-import ProjectPage from "./pages/project.page";
+import ProjectPage from "./pages/projectPage/project.page";
 import NewPage from "./pages/newPage/new.page";
 
 import NotFoundPage from "./pages/404";
