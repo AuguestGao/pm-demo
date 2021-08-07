@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NewRootContainer = styled.div`
+export const ProfileRootContainer = styled.div`
   width: 50%;
   min-width: 300px;
   max-width: 600px;

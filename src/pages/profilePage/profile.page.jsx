@@ -7,16 +7,16 @@ import { useDispatch } from "react-redux";
 import FormInput from "../../components/FormInput/FormInput.component";
 
 import {
-  NewRootContainer,
+  ProfileRootContainer,
   FormContainer,
   CustomFieldContainer,
   SelectContainer,
   CustomFieldDisplayContainer,
   DeleteButtonContainer,
-} from "./new.page.styles";
+} from "./profile.page.styles";
 import { createCard } from "../../redux/slices/cardsSlice";
 
-const NewPage = () => {
+const ProfilePage = () => {
   const [profile, setProfile] = useState({
     name: "",
     address: "",
@@ -111,7 +111,7 @@ const NewPage = () => {
   );
 
   return (
-    <NewRootContainer>
+    <ProfileRootContainer>
       <FormContainer>
         <h2>NEW</h2>
         <FormInput
@@ -196,8 +196,8 @@ const NewPage = () => {
           Cancel
         </Button>
       </ButtonGroup>
-    </NewRootContainer>
+    </ProfileRootContainer>
   );
 };
 
-export default NewPage;
+export default ProfilePage;

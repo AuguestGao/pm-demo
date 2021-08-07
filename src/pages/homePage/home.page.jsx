@@ -13,7 +13,7 @@ const HomePage = () => {
 
   return (
     <HomeRootContainer>
-      <Button variant="dark" onClick={() => history.push("/new")}>
+      <Button variant="dark" onClick={() => history.push("/profile")}>
         NEW
       </Button>
       <CardPreviewContainer>
@@ -29,12 +29,12 @@ const HomePage = () => {
             />
           ))
         )}
-        <CardPreview
+        {/* <CardPreview
           key="fake"
           id="fake"
           title="Non-existing Card"
           text="to mimic manually typed card id"
-        />
+        /> */}
       </CardPreviewContainer>
     </HomeRootContainer>
   );

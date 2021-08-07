@@ -2,7 +2,7 @@ import React from "react";
 
 import HomePage from "./pages/homePage/home.page";
 import ProjectPage from "./pages/projectPage/project.page";
-import NewPage from "./pages/newPage/new.page";
+import ProfilePage from "./pages/profilePage/profile.page";
 
 import NotFoundPage from "./pages/404";
 import Header from "./components/Header.component";
@@ -21,7 +21,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/project/:id" component={ProjectPage} />
-        <Route path="/new" component={NewPage} />
+        <Route path="/profile" component={ProfilePage} />
         <Route path="/notfound" component={NotFoundPage} />
         <Redirect to="/notfound" />
       </Switch>
