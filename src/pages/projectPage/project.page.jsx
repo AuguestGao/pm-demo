@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Redirect } from "react-router";
+import { Redirect } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 import FormInput from "../../components/FormInput/FormInput.component";
@@ -34,7 +34,6 @@ const ProjectPage = ({ match }) => {
     e.preventDefault();
     dispatch(addTodo({ cardId: id, newContent }));
     resetNewContent();
-    // console.log({ cardId: id, newContent });
   };
 
   const handleDeleteTodoClicked = (e) => {
@@ -136,8 +135,8 @@ const ProjectPage = ({ match }) => {
               variant="white"
               style={{
                 fontWeight: "bolder",
-                "font-size": "2rem",
-                "box-shadow": "none",
+                fontSize: "2rem",
+                boxShadow: "none",
               }}
               onClick={handleAddTodoClicked}
             >

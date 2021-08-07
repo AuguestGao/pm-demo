@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import { Button, ButtonGroup } from "react-bootstrap";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import FormInput from "../../components/FormInput/FormInput.component";
@@ -52,7 +52,6 @@ const ProfilePage = () => {
 
   const handleAddFieldClicked = (e) => {
     e.preventDefault();
-    console.log(profile);
     setProfile({
       ...profile,
       customFields: [...profile.customFields, { ...field, id: nanoid() }],

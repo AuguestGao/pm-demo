@@ -21,7 +21,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/project/:id" component={ProjectPage} />
-        <Route path="/profile" component={ProfilePage} />
+        <Route path="/new" component={ProfilePage} />
         <Route path="/notfound" component={NotFoundPage} />
         <Redirect to="/notfound" />
       </Switch>

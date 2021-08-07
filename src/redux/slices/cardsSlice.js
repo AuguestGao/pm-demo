@@ -1,5 +1,4 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
-import { remove } from "lodash";
 
 const initialState = {};
 

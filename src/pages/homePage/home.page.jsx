@@ -13,7 +13,7 @@ const HomePage = () => {
 
   return (
     <HomeRootContainer>
-      <Button variant="dark" onClick={() => history.push("/profile")}>
+      <Button variant="dark" onClick={() => history.push("/new")}>
         NEW
       </Button>
       <CardPreviewContainer>
