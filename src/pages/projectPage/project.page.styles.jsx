@@ -69,3 +69,9 @@ export const DeleteTodoContainer = styled.div`
   font-weight: bold;
   cursor: pointer;
 `;
+
+export const CompletedTodoTitle = styled.p`
+  color: gray;
+  font-size: 1.2rem;
+  text-align: center;
+`;

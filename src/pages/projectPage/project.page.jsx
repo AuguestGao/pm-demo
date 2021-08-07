@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 import FormInput from "../../components/FormInput/FormInput.component";
@@ -18,6 +18,7 @@ import {
   InlineProfile,
   InlineTodo,
   DeleteTodoContainer,
+  CompletedTodoTitle,
 } from "./project.page.styles";
 
 const ProjectPage = ({ match }) => {
@@ -28,6 +29,7 @@ const ProjectPage = ({ match }) => {
 
   const cards = useSelector((state) => state.cards);
   const dispatch = useDispatch();
+  const history = useHistory();
   const card = cards.hasOwnProperty(id) ? cards[id] : undefined;
 
   const handleAddTodoClicked = (e) => {
@@ -95,7 +97,7 @@ const ProjectPage = ({ match }) => {
     return (
       <>
         {renderActiveTodos}
-        <h3>Completed</h3>
+        <CompletedTodoTitle>Completed</CompletedTodoTitle>
         {renderCompleteTodos}
       </>
     );
@@ -118,8 +120,20 @@ const ProjectPage = ({ match }) => {
               <InlineProfile key={key}>
                 {key.toUpperCase()}: <span>{value ? value : "N/A"}</span>
               </InlineProfile>
-            ) : null
+            ) : (
+              value.map((field) => (
+                <InlineProfile key={field.id}>
+                  {field.name.toUpperCase()}: {field.value}
+                </InlineProfile>
+              ))
+            )
           )}
+          <Button
+            variant="outline-dark"
+            onClick={() => history.push(`/profile/${id}`)}
+          >
+            Edit Profile
+          </Button>
         </ProfileSection>
         <TodoSection>
           {card.todos.length ? renderTodos() : <h2>No todos</h2>}

@@ -25,6 +25,11 @@ const cardsSlice = createSlice({
       },
     },
 
+    updateProfile(state, action) {
+      const { cardId, profile } = action.payload;
+      return { ...state, [cardId]: { ...state[cardId], profile: profile } };
+    },
+
     addTodo: {
       reducer: (state, action) => {
         const { cardId, todoData } = action.payload;
@@ -69,7 +74,12 @@ const cardsSlice = createSlice({
   },
 });
 
-export const { createCard, addTodo, toggleTodoIsDone, deleteTodo } =
-  cardsSlice.actions;
+export const {
+  createCard,
+  updateProfile,
+  addTodo,
+  toggleTodoIsDone,
+  deleteTodo,
+} = cardsSlice.actions;
 
 export default cardsSlice.reducer;
