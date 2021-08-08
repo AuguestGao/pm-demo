@@ -18,3 +18,23 @@ export const CardPreviewContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
 `;
+
+export const TopContainer = styled.div`
+  width: 100%;
+  box-sizing: border-box;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: nowrap; */
+  justify-content: space-around;
+
+  button {
+    height: 45px;
+    width: 60px;
+    padding: 5px 10px;
+  }
+`;
+
+export const SearchBarContainer = styled.div`
+  width: 50%;
+`;
