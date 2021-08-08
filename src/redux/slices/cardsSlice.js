@@ -71,6 +71,13 @@ const cardsSlice = createSlice({
         card.todos = card.todos.filter((obj) => obj.id !== todoId);
       }
     },
+
+    deleteCard(state, action) {
+      const { cardId } = action.payload;
+      if (state.hasOwnProperty(cardId)) {
+        delete state[cardId];
+      }
+    },
   },
 });
 
@@ -80,6 +87,7 @@ export const {
   addTodo,
   toggleTodoIsDone,
   deleteTodo,
+  deleteCard,
 } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

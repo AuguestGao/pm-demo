@@ -75,3 +75,32 @@ export const CompletedTodoTitle = styled.p`
   font-size: 1.2rem;
   text-align: center;
 `;
+
+export const DeleteCardContainer = styled.div`
+  width: 100%;
+
+  #button {
+    float: right;
+  }
+`;
+
+export const DeletionBoxContainer = styled.div`
+  border: 2px solid rgb(230, 96, 96);
+  border-radius: 3px;
+  margin: 20px auto;
+  padding: 5px;
+
+  .warning {
+    color: black;
+    text-align: center;
+    margin: 20px auto 40px auto;
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-end;
+    margin: 20px 5%;
+  }
+`;

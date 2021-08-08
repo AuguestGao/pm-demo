@@ -8,6 +8,7 @@ import {
   addTodo,
   toggleTodoIsDone,
   deleteTodo,
+  deleteCard,
 } from "../../redux/slices/cardsSlice";
 
 import {
@@ -19,6 +20,8 @@ import {
   InlineTodo,
   DeleteTodoContainer,
   CompletedTodoTitle,
+  DeleteCardContainer,
+  DeletionBoxContainer,
 } from "./project.page.styles";
 
 const ProjectPage = ({ match }) => {
@@ -32,6 +35,9 @@ const ProjectPage = ({ match }) => {
   const history = useHistory();
   const card = cards.hasOwnProperty(id) ? cards[id] : undefined;
 
+  const [showDeletionBox, toggleDeletionBox] = useState(false);
+  const [deletionInput, setDeletionInput] = useState("");
+
   const handleAddTodoClicked = (e) => {
     e.preventDefault();
     dispatch(addTodo({ cardId: id, newContent }));
@@ -40,6 +46,20 @@ const ProjectPage = ({ match }) => {
 
   const handleDeleteTodoClicked = (e) => {
     dispatch(deleteTodo({ cardId: id, todoId: e.target.parentNode.id }));
+  };
+
+  const handleConfirmDeleteClicked = () => {
+    if (deletionInput !== card.profile.name) {
+      alert("Input does not match project name, deletetion failed");
+    } else {
+      dispatch(deleteCard({ cardId: id }));
+      history.push("/");
+    }
+  };
+
+  const handleDiscardDeteleClicked = () => {
+    setDeletionInput("");
+    toggleDeletionBox(false);
   };
 
   const renderTodos = () => {
@@ -159,6 +179,45 @@ const ProjectPage = ({ match }) => {
           </InlineTodo>
         </TodoSection>
       </MainContainer>
+      <DeleteCardContainer>
+        {showDeletionBox ? (
+          <DeletionBoxContainer>
+            <h2 className="warning">Confirm Deletion</h2>
+            <form>
+              <FormInput
+                label="Enter Project name"
+                value={deletionInput}
+                onChange={(e) => setDeletionInput(e.target.value)}
+              />
+            </form>
+            <div className="button-group">
+              <Button
+                size="md"
+                variant="danger"
+                onClick={handleConfirmDeleteClicked}
+              >
+                CONFIRM
+              </Button>
+              <Button
+                size="md"
+                variant="dark"
+                onClick={handleDiscardDeteleClicked}
+              >
+                DISCARD
+              </Button>
+            </div>
+          </DeletionBoxContainer>
+        ) : (
+          <Button
+            size="sm"
+            variant="outline-dark"
+            onClick={() => toggleDeletionBox(true)}
+            id="button"
+          >
+            DELETE CARD
+          </Button>
+        )}
+      </DeleteCardContainer>
     </ProjectRootContainer>
   );
 };
