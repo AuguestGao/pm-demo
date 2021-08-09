@@ -7,16 +7,11 @@ import ProfilePage from "./pages/profilePage/profile.page";
 import NotFoundPage from "./pages/404";
 import Header from "./components/Header.component";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from "react-router-dom";
+import { HashRouter, Route, Redirect, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <HashRouter basename="/">
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
@@ -25,7 +20,7 @@ function App() {
         <Route path="/notfound" component={NotFoundPage} />
         <Redirect to="/notfound" />
       </Switch>
-    </Router>
+    </HashRouter>
   );
 }
 
