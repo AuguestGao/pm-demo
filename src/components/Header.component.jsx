@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <Navbar collapseOnSelect expand="md" bg="light" sticky="top">
+    <Navbar bg="light" sticky="top">
       <Container>
-        <Navbar.Brand className>PM-Demo</Navbar.Brand>
+        <Navbar.Brand>PM-Demo</Navbar.Brand>
       </Container>
       <Nav>
         <Container className="justify-content-end cursor-pointer">
